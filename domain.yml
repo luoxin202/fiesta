@@ -1,0 +1,54 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - query_concert
+  - book_tickets
+  - cancel_order
+  - check_order_status
+  - company_details
+  - get_human_assistance
+
+entities:
+  - concert_name
+  - ticket_quantity
+  - order_id
+
+actions:
+  - action_query_concert
+  - action_book_tickets
+  - action_cancel_order
+  - action_check_order_status
+  - action_request_human_assistance
+  - action_company_details
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Hello! How can I assist you today?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
