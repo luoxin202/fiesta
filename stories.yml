@@ -1,0 +1,62 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: User queries concert information
+  steps:
+  - intent: query_concert
+  - action: action_query_concert
+
+- story: User wants to query order status
+  steps:
+  - intent: check_order_status
+  - action: action_check_order_status
+
+- story: User wants to book tickets
+  steps:
+  - intent: book_tickets
+  - action: action_book_tickets
+
+- story: User wants to cancel a ticket order
+  steps:
+  - intent: cancel_order
+  - action: action_cancel_order
+
+- story: User asks for company details
+  steps:
+  - intent: company_details
+  - action: action_company_details
+
+- story: User requests human assistance
+  steps:
+  - intent: get_human_assistance
+  - action: action_request_human_assistance
+
+

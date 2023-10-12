@@ -1,0 +1,43 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Provide upcoming concert information
+  steps:
+  - intent: query_concert
+  - action: action_query_concert
+
+- rule: Book tickets for a concert
+  steps:
+  - intent: book_tickets
+  - action: action_book_tickets
+
+- rule: Check ticket order
+  steps:
+  - intent: check_order_status
+  - action: action_check_order_status
+
+- rule: Cancel ticket order
+  steps:
+  - intent: cancel_order
+  - action: action_cancel_order
+
+- rule: Provide company details
+  steps:
+  - intent: company_details
+  - action: action_company_details
+
+- rule: Request human assistance
+  steps:
+  - intent: get_human_assistance
+  - action: action_request_human_assistance
